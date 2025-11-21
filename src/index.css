@@ -13,15 +13,27 @@
   --accent-glow: rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.12);
 
   /* Background gradients and surfaces (light mode defaults) */
-  --bg-gradient: linear-gradient(
-    135deg,
-    rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.03) 0%,
-    rgba(16, 185, 129, 0.02) 100%
+  --bg-gradient:
+    linear-gradient(
+      135deg,
+      rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.06) 0%,
+      rgba(16, 185, 129, 0.03) 60%
+    ),
+    radial-gradient(
+      800px 360px at 85% 15%,
+      rgba(59, 130, 246, 0.03),
+      transparent 30%
+    );
+  --surface-bg: rgba(255, 255, 255, 0.78);
+  --surface-border: rgba(2, 6, 23, 0.06);
+  --surface-elevation: rgba(2, 6, 23, 0.08);
+  --header-glow: rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.12);
+  --accent-glow-strong: rgba(
+    var(--accent-r),
+    var(--accent-g),
+    var(--accent-b),
+    0.18
   );
-  --surface-bg: rgba(255, 255, 255, 0.72);
-  --surface-border: rgba(2, 6, 23, 0.04);
-  --surface-elevation: rgba(2, 6, 23, 0.06);
-  --header-glow: rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.1);
 }
 
 .accent-text {
@@ -150,12 +162,12 @@ body::before {
   background-image:
     radial-gradient(
       600px 400px at 10% 20%,
-      rgba(59, 130, 246, 0.1),
+      rgba(59, 130, 246, 0.14),
       transparent 20%
     ),
     radial-gradient(
       500px 300px at 80% 70%,
-      rgba(16, 185, 129, 0.06),
+      rgba(16, 185, 129, 0.08),
       transparent 25%
     );
   background-repeat: no-repeat;
@@ -166,7 +178,7 @@ body::before {
 body::after {
   background-image: radial-gradient(
     420px 320px at 50% 80%,
-    rgba(99, 102, 241, 0.06),
+    rgba(99, 102, 241, 0.08),
     transparent 20%
   );
   background-repeat: no-repeat;
@@ -316,6 +328,14 @@ button,
     color 0.25s ease,
     box-shadow 0.25s ease,
     background 0.25s ease;
+}
+
+/* Light-mode subtle accent shadow on interactive elements */
+body:not(.dark) .rounded-full:hover,
+body:not(.dark) button:hover,
+body:not(.dark) a:hover {
+  box-shadow: 0 10px 30px
+    rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.06);
 }
 
 /* Neon-like subtle glow for icons/links in dark mode */

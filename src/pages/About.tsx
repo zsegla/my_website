@@ -174,43 +174,74 @@ export default function About() {
 
                   {/* Contact links: GitHub, LinkedIn, Email (pill style like footer) */}
                   <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                    {/* GitHub */}
                     <a
                       href="https://github.com/zsegla"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto"
+                      className="w-full sm:w-auto group"
                       aria-label="GitHub"
                     >
-                      <div className="inline-flex items-center gap-3 rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 bg-transparent hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-black dark:hover:text-gray-100 transition">
-                        <Github size={18} />
+                      <div
+                        className="inline-flex items-center gap-3 rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 
+      transition-all duration-300 bg-transparent
+      group-hover:bg-black group-hover:text-white 
+      group-hover:shadow-[0_0_12px_2px_rgba(0,0,0,0.4)]
+    "
+                      >
+                        <Github
+                          size={18}
+                          className="transition-all duration-300 group-hover:text-white"
+                        />
                         <span className="text-sm font-mono">GitHub</span>
                       </div>
                     </a>
 
+                    {/* LinkedIn */}
                     <a
                       href="https://linkedin.com/in/fekreselassie-mulu-freelancer"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto"
+                      className="w-full sm:w-auto group"
                       aria-label="LinkedIn"
                     >
-                      <div className="inline-flex items-center gap-3 rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 bg-transparent hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-black dark:hover:text-gray-100 transition">
-                        <Linkedin size={18} />
+                      <div
+                        className="inline-flex items-center gap-3 rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 
+      transition-all duration-300 bg-transparent
+      group-hover:bg-[#0A66C2] group-hover:text-white 
+      group-hover:shadow-[0_0_14px_3px_rgba(10,102,194,0.5)]
+    "
+                      >
+                        <Linkedin
+                          size={18}
+                          className="transition-all duration-300 group-hover:text-white"
+                        />
                         <span className="text-sm font-mono">LinkedIn</span>
                       </div>
                     </a>
 
+                    {/* Email */}
                     <a
                       href="mailto:fekruson@gmail.com"
-                      className="w-full sm:w-auto"
+                      className="w-full sm:w-auto group"
                       aria-label="Email"
                     >
-                      <div className="inline-flex items-center gap-3 rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 bg-transparent hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-black dark:hover:text-gray-100 transition">
-                        <Mail size={18} />
+                      <div
+                        className="inline-flex items-center gap-3 rounded-full border border-gray-300 dark:border-gray-700 px-4 py-2 
+      transition-all duration-300 bg-transparent
+      group-hover:bg-red-500 group-hover:text-white 
+      group-hover:shadow-[0_0_14px_3px_rgba(239,68,68,0.5)]
+    "
+                      >
+                        <Mail
+                          size={18}
+                          className="transition-all duration-300 group-hover:text-white"
+                        />
                         <span className="text-sm font-mono">Email</span>
                       </div>
                     </a>
                   </div>
+
                   <p className="text-lg leading-relaxed opacity-80 font-mono">
                     A creative developer based in Addis Ababa, Ethiopia,
                     specializing in modern web apps with clean, maintainable

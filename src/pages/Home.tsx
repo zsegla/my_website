@@ -11,7 +11,7 @@ export default function Home({
 }) {
   return (
     <div className="min-h-[80vh] flex items-start justify-center hero-colorful">
-      <div className="text-center max-w-4xl mx-auto space-y-6 animate-fade-in pt-6">
+      <div className="text-center max-w-4xl mx-auto space-y-6 animate-entrance-right staggered-right pt-6">
         {/* Herald button (links to work) */}
         <div className="flex justify-center mt-6 md:mt-8">
           <button
@@ -22,12 +22,12 @@ export default function Home({
           </button>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-mono">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-mono max-w-2xl mx-auto">
           Crafting Systems, Building Software
         </h1>
 
         {/* Intro Paragraph */}
-        <p className="text-xl md:text-2xl opacity-70 max-w-2xl mx-auto leading-relaxed font-mono">
+        <p className="text-xl md:text-2xl opacity-70 max-w-3xl mx-auto leading-relaxed font-mono">
           Creative developer crafting digital experiences with passion and
           precision | Specializing in full-stack web development, system design,
           and cloud solutions | Let's build something amazing together!

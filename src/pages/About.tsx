@@ -276,26 +276,31 @@ export default function About() {
                 <h3 className="text-2xl font-semibold text-center font-mono">
                   What I Value
                 </h3>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center space-y-3">
-                    <Heart className="w-8 h-8 mx-auto opacity-60" />
-                    <h4 className="font-semibold font-mono">Passion</h4>
-                    <p className="text-sm opacity-70 font-mono">
+                <div className="grid md:grid-cols-3 gap-6 text-center mt-8">
+                  {/* Ignite / Passion */}
+                  <div className="flex flex-col items-center space-y-3">
+                    <Heart className="w-12 h-12 text-red-500 animate-pulse-slow drop-shadow-lg transition-all duration-500 group-hover:scale-110" />
+                    <h4 className="font-semibold  font-mono">Passion</h4>
+                    <p className="text-sm opacity-80 font-mono">
                       I love what I do and it shows in every project I work on.
                     </p>
                   </div>
-                  <div className="text-center space-y-3">
-                    <Award className="w-8 h-8 mx-auto opacity-60" />
-                    <h4 className="font-semibold font-mono">Quality</h4>
-                    <p className="text-sm opacity-70 font-mono">
+
+                  {/* PrimeCore / Quality */}
+                  <div className="flex flex-col items-center space-y-3">
+                    <Award className="w-12 h-12 text-blue-500 animate-pulse-slow drop-shadow-lg transition-all duration-500 group-hover:scale-110" />
+                    <h4 className="font-semibold text-xl font-mono">Quality</h4>
+                    <p className="text-sm opacity-80 font-mono">
                       Attention to detail and commitment to excellence in every
                       line of code.
                     </p>
                   </div>
-                  <div className="text-center space-y-3">
-                    <TrendingUp className="w-8 h-8 mx-auto opacity-60" />
-                    <h4 className="font-semibold font-mono">Growth</h4>
-                    <p className="text-sm opacity-70 font-mono">
+
+                  {/* Elevate / Growth */}
+                  <div className="flex flex-col items-center space-y-3">
+                    <TrendingUp className="w-12 h-12 text-green-500 animate-bounce-slow drop-shadow-lg transition-all duration-500 group-hover:scale-110" />
+                    <h4 className="font-semibold text-xl font-mono">Growth</h4>
+                    <p className="text-sm opacity-80 font-mono">
                       Continuously learning and adapting to new technologies and
                       challenges.
                     </p>

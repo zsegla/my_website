@@ -354,6 +354,21 @@ body::after {
   backdrop-filter: saturate(120%) blur(6px);
 }
 
+/* Navbar glow styles (theme-aware) */
+.nav-glow-light {
+  /* stronger, darker gray shadow for light theme so the navbar reads more clearly */
+  box-shadow:
+    0 10px 35px rgba(31, 41, 55, 0.14),
+    0 0 18px rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.06);
+}
+
+.nav-glow-dark {
+  /* deeper glow in dark mode, slightly more saturated */
+  box-shadow:
+    0 8px 30px rgba(2, 6, 23, 0.6),
+    0 0 18px rgba(99, 102, 241, 0.18);
+}
+
 /* Accent glow behind section headers (subtle, centered) */
 section h2,
 section h3 {

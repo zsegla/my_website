@@ -37,13 +37,15 @@ export default function Navbar({
       <div
         className={`flex items-center gap-1 px-2 py-1 rounded-full backdrop-blur-md border transition-all duration-300 ${
           theme === "dark"
-            ? "bg-gradient-to-r from-sky-900/60 via-indigo-900/40 to-gray-800/60 border-gray-700"
-            : "bg-gradient-to-r from-sky-50/80 via-white/80 to-sky-100/80 border-sky-200"
+            ? "bg-gradient-to-r from-sky-900/60 via-indigo-900/40 to-gray-800/60 border-gray-700 nav-glow-dark"
+            : "bg-gradient-to-r from-sky-50/80 via-white/80 to-sky-100/80 border-sky-200 nav-glow-light"
         }`}
       >
         {/* Home Icon */}
         <button
           onClick={() => onPageChange("home")}
+          aria-label="Home"
+          title="Home"
           className={`w-7 h-7 flex items-center justify-center rounded-full transition-all duration-200 ${
             currentPage === "home"
               ? theme === "dark"
@@ -93,6 +95,8 @@ export default function Navbar({
         {/* Theme Toggle */}
         <button
           onClick={onThemeToggle}
+          aria-label="Toggle theme"
+          title="Toggle theme"
           className={`p-1.5 rounded-full transition-all duration-200 ${"hover:bg-sky-100 hover:text-sky-900 dark:hover:bg-gray-700 dark:hover:text-white"}`}
         >
           {theme === "light" ? <Moon size={14} /> : <Sun size={14} />}

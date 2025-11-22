@@ -15,52 +15,97 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Avatar from "../components/Avatar";
+import SkillsSection from "../components/SkillsSection";
 import profileSrc from "../images/profile1.jpg";
 
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "Tech Solutions Inc.",
+    title: "Backend Lead",
+    company: "Africa to Silicon Valley",
     location: "Addis Ababa, ET",
-    period: "2022 - Present",
+    period: "Feb,2024 - Present",
     description:
-      "Leading frontend development for enterprise applications, mentoring junior developers, and implementing modern React architectures.",
-    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+      "Leading backend development for enterprise applications, mentoring junior developers, designing scalable APIs, and implementing robust server-side architectures.",
+    technologies: [
+      "Golang",
+      "TypeScript",
+      "NestJS",
+      "MongoDB",
+      "Docker",
+      "Kubernetes",
+      "PostgreSQL",
+    ],
   },
   {
     title: "Full Stack Developer",
-    company: "Digital Agency",
-    location: "Remote",
-    period: "2021 - 2022",
+    company: "Eskalate",
+    location: "US, California",
+    period: "Sep, 2023 - Mar, 2024",
     description:
-      "Developed and maintained multiple client websites and web applications using modern technologies.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      "Built and maintained scalable web and mobile applications for restaurant services, developing RESTful APIs, integrating front-end and back-end systems, and improving performance, reliability, and usability through clean architecture and modern development practices.",
+    technologies: [
+      "TypeScript",
+      ".NET",
+      "Flutter",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "AWS",
+    ],
   },
   {
-    title: "Frontend Developer",
-    company: "StartupXYZ",
+    title: "Head of Remote Education",
+    company: "Africa to Silicon Valley",
     location: "Addis Ababa, ET",
-    period: "2020 - 2021",
+    period: "Feb, 2024 - Jan, 2025",
     description:
-      "Built responsive web applications and collaborated with design teams to create exceptional user experiences.",
-    technologies: ["Vue.js", "JavaScript", "SCSS", "Firebase"],
+      "Led remote education programs, training students in advanced data structures, algorithms, and competitive programming challenges. Mentored learners to solve complex problems and prepare for top tech opportunities.",
+    technologies: [
+      "Data Structures",
+      "Algorithms",
+      "Python",
+      "C++",
+      "Problem Solving",
+    ],
+  },
+  {
+    title: "Python Developer",
+    company: "Lian Technologies",
+    location: "Addis Ababa, ET",
+    period: "Feb, 2024 - Jan, 2025",
+    description:
+      "Led remote education programs, training students in advanced data structures, algorithms, and competitive programming challenges. Mentored learners to solve complex problems and prepare for top tech opportunities.",
+    technologies: [
+      "Data Structures",
+      "Algorithms",
+      "Python",
+      "C++",
+      "Problem Solving",
+    ],
   },
 ];
 
 const studies = [
   {
-    degree: "Bachelor of Science in Computer Science",
+    degree: "Bachelor of Science in Computer Engineering",
     institution: "Addis Ababa University",
-    period: "2016 - 2020",
+    period: "2019 - 2024",
     description:
-      "Focused on software engineering, algorithms, and data structures. Graduated with honors.",
+      "Studied core computer engineering topics, including digital systems, embedded systems, algorithms, and data structures, graduating with honors.",
   },
   {
-    degree: "Full Stack Web Development Bootcamp",
-    institution: "Tech Academy",
-    period: "2020",
+    degree: "Software Engineering Bootcamp",
+    institution: "Africa to Silicon Valley Coding Academy",
+    period: "2023 - 2024",
     description:
-      "Intensive 6-month program covering modern web development technologies and best practices.",
+      "Completed an intensive 2-year program: the first year focused on advanced data structures and algorithms, and the second year on full-stack development, covering both frontend and backend technologies.",
+  },
+  {
+    degree: "Fullstack Development",
+    institution: "ALX",
+    period: "Jun 2025 - Nov 2025",
+    description:
+      "Completed ALX Fullstack Development program covering Frontend Pro and Backend tracks — built full-stack applications, worked with modern frontend frameworks and backend services, and deployed production-ready projects.",
   },
 ];
 
@@ -324,11 +369,17 @@ export default function About() {
                 {experiences.map((exp, index) => (
                   <div
                     key={index}
-                    className="group relative p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                    className="group relative p-6 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 transform shadow-sm scale-[1.01] hover:scale-[1.02] hover:shadow-2xl"
                   >
-                    <div className="space-y-3">
+                    {/* left accent bar (visible by default, stronger on hover) */}
+                    <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-gradient-to-b from-indigo-400 to-pink-500 opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                    {/* subtle colorful backdrop by default, intensifies on hover */}
+                    <div className="absolute inset-0 pointer-events-none opacity-20 group-hover:opacity-90 transition-opacity duration-300 bg-gradient-to-br from-sky-50 to-pink-50 dark:from-transparent dark:via-transparent dark:to-transparent dark:group-hover:from-indigo-900/30 dark:group-hover:via-purple-900/20 dark:group-hover:to-transparent" />
+
+                    <div className="relative z-10 space-y-3">
                       <div>
-                        <h3 className="text-xl font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors font-mono">
+                        <h3 className="text-xl font-semibold text-indigo-600 dark:text-indigo-300 transition-colors duration-200 font-mono group-hover:text-indigo-800 dark:group-hover:text-indigo-100">
                           {exp.title}
                         </h3>
                         <p className="text-lg opacity-80 font-mono">
@@ -355,13 +406,15 @@ export default function About() {
                         {exp.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 opacity-80 font-mono"
+                            className="px-3 py-1 text-xs rounded-full bg-indigo-50 dark:bg-indigo-900/40 opacity-90 font-mono transition-colors duration-200 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-700"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
+
+                    {/* hover handled on the wrapper (stronger scale & shadow) */}
                   </div>
                 ))}
               </div>
@@ -380,11 +433,14 @@ export default function About() {
                 {studies.map((study, index) => (
                   <div
                     key={index}
-                    className="group relative p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                    className="group relative p-6 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 transform shadow-sm scale-[1.01] hover:scale-[1.02] hover:shadow-2xl"
                   >
-                    <div className="space-y-3">
+                    <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-gradient-to-b from-amber-400 to-pink-500 opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    <div className="absolute inset-0 pointer-events-none opacity-20 group-hover:opacity-90 transition-opacity duration-300 bg-gradient-to-br from-amber-50 to-rose-50 dark:from-transparent dark:via-transparent dark:to-transparent dark:group-hover:from-amber-900/30 dark:group-hover:via-rose-900/20 dark:group-hover:to-transparent" />
+
+                    <div className="relative z-10 space-y-3">
                       <div>
-                        <h3 className="text-xl font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors font-mono">
+                        <h3 className="text-xl font-semibold text-amber-600 dark:text-amber-300 transition-colors duration-200 font-mono group-hover:text-amber-800 dark:group-hover:text-amber-100">
                           {study.degree}
                         </h3>
                         <p className="text-lg opacity-80 font-mono">
@@ -397,76 +453,19 @@ export default function About() {
                         <span className="font-mono">{study.period}</span>
                       </div>
 
-                      <p className="opacity-80 leading-relaxed font-mono">
+                      <p className="opacity-80 leading-relaxed text-sm font-mono">
                         {study.description}
                       </p>
                     </div>
+
+                    {/* hover handled on the wrapper (stronger scale & shadow) */}
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Skills Section */}
-            <section id="skills" className="space-y-8">
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl font-bold font-mono">
-                  Skills & Technologies
-                </h2>
-                <p className="text-lg opacity-70 font-mono">
-                  Tools and technologies I work with
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  "React",
-                  "TypeScript",
-                  "Node.js",
-                  "Python",
-                  "Next.js",
-                  "Tailwind CSS",
-                  "PostgreSQL",
-                  "MongoDB",
-                  "AWS",
-                  "Docker",
-                  "Git",
-                  "Figma",
-                ].map((skill) => (
-                  <div
-                    key={skill}
-                    className="p-4 rounded-xl border border-gray-200 dark:border-gray-700 text-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 font-mono"
-                  >
-                    {skill}
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center space-y-6 pt-8">
-                <h3 className="text-2xl font-semibold font-mono">
-                  Core Competencies
-                </h3>
-                <div className="flex flex-wrap justify-center gap-3">
-                  {[
-                    "Frontend Development",
-                    "React Ecosystem",
-                    "TypeScript",
-                    "UI/UX Implementation",
-                    "Team Leadership",
-                    "Agile Methodologies",
-                    "Performance Optimization",
-                    "Testing",
-                    "CI/CD",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 font-mono"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </section>
+            {/* Skills Section (refactored) */}
+            <SkillsSection />
           </div>
 
           {/* footer removed here to use the global site Footer component from App */}
@@ -575,11 +574,14 @@ export default function About() {
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className="group relative p-4 rounded-2xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                  className="group relative p-4 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 transform shadow-sm scale-[1.01] hover:scale-[1.02] hover:shadow-lg"
                 >
-                  <div className="space-y-3">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-gradient-to-b from-indigo-400 to-pink-500 opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute inset-0 pointer-events-none opacity-20 group-hover:opacity-90 transition-opacity duration-300 bg-gradient-to-br from-sky-50 to-pink-50 dark:from-transparent dark:via-transparent dark:to-transparent dark:group-hover:from-indigo-900/30 dark:group-hover:via-purple-900/20 dark:group-hover:to-transparent" />
+
+                  <div className="relative z-10 space-y-3">
                     <div>
-                      <h3 className="text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors font-mono">
+                      <h3 className="text-lg font-semibold text-indigo-600 dark:text-indigo-300 transition-colors font-mono group-hover:text-indigo-800 dark:group-hover:text-indigo-100">
                         {exp.title}
                       </h3>
                       <p className="text-base opacity-80 font-mono">
@@ -606,7 +608,7 @@ export default function About() {
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 opacity-80 font-mono"
+                          className="px-2 py-1 text-xs rounded-full bg-indigo-50 dark:bg-indigo-900/40 opacity-90 font-mono transition-colors duration-200 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-700"
                         >
                           {tech}
                         </span>
@@ -631,11 +633,14 @@ export default function About() {
               {studies.map((study, index) => (
                 <div
                   key={index}
-                  className="group relative p-4 rounded-2xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                  className="group relative p-4 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 transform shadow-sm scale-[1.01] hover:scale-[1.02] hover:shadow-lg"
                 >
-                  <div className="space-y-3">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl bg-gradient-to-b from-amber-400 to-pink-500 opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute inset-0 pointer-events-none opacity-20 group-hover:opacity-90 transition-opacity duration-300 bg-gradient-to-br from-amber-50 to-rose-50 dark:from-transparent dark:via-transparent dark:to-transparent dark:group-hover:from-amber-900/30 dark:group-hover:via-rose-900/20 dark:group-hover:to-transparent" />
+
+                  <div className="space-y-3 relative z-10">
                     <div>
-                      <h3 className="text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors font-mono">
+                      <h3 className="text-lg font-semibold text-amber-600 dark:text-amber-300 transition-colors font-mono group-hover:text-amber-800 dark:group-hover:text-amber-100">
                         {study.degree}
                       </h3>
                       <p className="text-base opacity-80 font-mono">
@@ -657,67 +662,8 @@ export default function About() {
             </div>
           </section>
 
-          {/* Skills Section */}
-          <section id="skills" className="space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold font-mono">
-                Skills & Technologies
-              </h2>
-              <p className="text-base opacity-70 font-mono">
-                Tools and technologies I work with
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                "React",
-                "TypeScript",
-                "Node.js",
-                "Python",
-                "Next.js",
-                "Tailwind CSS",
-                "PostgreSQL",
-                "MongoDB",
-                "AWS",
-                "Docker",
-                "Git",
-                "Figma",
-              ].map((skill) => (
-                <div
-                  key={skill}
-                  className="p-3 rounded-xl border border-gray-200 dark:border-gray-700 text-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 font-mono text-sm"
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center space-y-6 pt-8">
-              <h3 className="text-xl font-semibold font-mono">
-                Core Competencies
-              </h3>
-              <div className="flex flex-wrap justify-center gap-2">
-                {[
-                  "Frontend Development",
-                  "React Ecosystem",
-                  "TypeScript",
-                  "UI/UX Implementation",
-                  "Team Leadership",
-                  "Agile Methodologies",
-                  "Performance Optimization",
-                  "Testing",
-                  "CI/CD",
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-2 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 font-mono text-xs"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/* Skills Section (refactored) */}
+          <SkillsSection />
         </div>
 
         {/* Mobile Bottom Navigation (icons-only, improved tap targets & contrast) */}

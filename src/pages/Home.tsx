@@ -37,7 +37,7 @@ export default function Home({
         <div className="flex justify-center mb-3">
           <button
             onClick={() => onNavigate("about")}
-            className="group transition-all duration-200 ease-out flex items-center gap-3 h-10 pl-3 pr-4 rounded-full bg-transparent border-2 border-sky-200/60 dark:border-sky-800/40 font-mono text-sm hover:bg-sky-50/40 dark:hover:bg-sky-900/30 group-hover:gap-4 group-hover:pl-5 group-hover:pr-7 hover:scale-105"
+            className="group transition-all duration-200 ease-out flex items-center gap-3 h-10 pl-3 pr-4 rounded-full bg-gradient-to-r from-sky-50/80 via-white/80 to-sky-100/80 border-2 border-sky-200/60 text-sky-900 dark:bg-gradient-to-r dark:from-gray-800/60 dark:via-gray-700/30 dark:to-gray-800/60 dark:border-gray-700 dark:text-white font-mono text-sm group-hover:gap-4 group-hover:pl-5 group-hover:pr-7 hover:scale-105 hover:shadow-md"
             title="About - Fekre"
           >
             {/* slightly larger avatar (placeholder image) so it is visible inside button */}
